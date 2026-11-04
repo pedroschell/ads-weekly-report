@@ -1,0 +1,36 @@
+# Copie para config/local.yml e preencha. O local.yml NUNCA vai para o git.
+report:
+  cliente: "Cliente Exemplo"
+  discord-webhook: "https://discord.com/api/webhooks/<id>/<token>"
+
+  meta:
+    ad-account-id: act_000000000000000
+    # Nome do slot no cofre do MATRIX Pack (o token em si nunca fica em arquivo).
+    vault-slot: META_ACCESS_TOKEN__000000000000000_00000000000000000000000000000000
+    vault-module: /caminho/para/MATRIX-PACK/security/CredentialVault.psm1
+
+  google:
+    customer-id: "0000000000"
+
+  # Uma tabela por grupo, na ordem da lista. A campanha entra no grupo do filtro mais longo presente no nome.
+  # Campanhas que nao casam com nenhum grupo saem em "Outras campanhas".
+  grupos:
+    - titulo: Produto A
+      filtros: ["Produto A"]
+    - titulo: Produto B
+      filtros: ["Produto B", "Campanha B2"]
+
+  # Linhas extras da mensagem: rotulo -> trecho do nome da campanha no Meta.
+  destaques:
+    "[Produto A WhatsApp]": "WhatsApp"
+
+  # Bloco "Paua": soma a conta Meta inteira no periodo (atual / mes anterior / ano anterior),
+  # menos as campanhas cujo nome contem algum termo de "excluir".
+  paua:
+    ad-account-id: act_000000000000000
+    vault-slot: META_ACCESS_TOKEN__000000000000000_00000000000000000000000000000000
+    excluir: ["contrata"]
+
+  # Planejado do mes por nome EXATO de campanha (opcional).
+  planejado:
+    "[Nome exato da campanha]": 5000

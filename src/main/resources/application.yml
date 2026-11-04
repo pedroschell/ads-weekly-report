@@ -1,0 +1,22 @@
+# Padroes publicos. Tudo o que e do cliente fica em config/local.yml (fora do git).
+spring:
+  main:
+    banner-mode: off
+    web-application-type: none
+  config:
+    import: optional:file:./config/local.yml
+
+logging:
+  level:
+    root: warn
+
+report:
+  commit-automatico: true
+  meta:
+    api-version: v23.0
+    # Acao deduplicada de lead do Meta (a "lead" crua conta em dobro).
+    tipos-de-lead:
+      - onsite_conversion.lead_grouped
+  google:
+    api-version: v24
+    credenciais-env: ~/.config/google-ads/credenciais.env
