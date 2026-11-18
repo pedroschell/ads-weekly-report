@@ -1,5 +1,7 @@
 # report-bot
 
+**Português** | [English](README.en.md)
+
 Bot de report semanal de mídia paga. Ele roda uma vez e fecha. Lê o Meta Ads e o Google Ads pelas APIs, monta as tabelas
 de campanhas e o texto da mensagem, tudo em texto,, e posta tudo num canal privado do Discord para conferência antes do envio
 ao cliente.
